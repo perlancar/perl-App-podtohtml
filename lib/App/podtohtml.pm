@@ -19,6 +19,8 @@ This is a thin wrapper for <pm:Pod::Html> and an alternative CLI to
 e.g. the default cache directory being `.` (so it leaves `.tmp` files around).
 This CLI also offers tab completion.
 
+It does not yet offer as many options as `pod2html`.
+
 _
     args => {
         infile => {
@@ -28,13 +30,12 @@ _
 If not found, will search in for .pod or .pm files in `@INC`.
 
 _
-            schema => 'str*', # XXX perl::modname | filename
+            schema => 'perl_modname_or_filename*',
             default => '-',
             pos => 0,
         },
         outfile => {
             schema => 'filename*',
-            default => '-',
             pos => 1,
         },
         browser => {
@@ -54,7 +55,7 @@ _
             'x.doc.show_result' => 0,
         },
         {
-            argv => [qw/some.pod/],
+            argv => [qw/some.pod --browser/],
             summary => 'Convert POD file to HTML, show result in browser',
             test => 0,
             'x.doc.show_result' => 0,
@@ -73,27 +74,38 @@ sub podtohtml {
 
     my $cachedir = File::Temp::tempdir(CLEANUP => 1);
 
-    my ($fh, $tempoutfile);
-    if ($browser) {
-        ($fh, $tempoutfile) = File::Temp::tempfile(
-            "xxxxxxxx.html", DIR => $cachedir);
+    my ($fh, $tempoutfile) = File::Temp::tempfile();
+
+    if ($infile eq '-') {
+    } else {
+        if (!(-f $infile)) {
+            # try searching in @INC
+            require Module::Path::More;
+            (my $mod = $infile) =~ s![/.]!::!g;
+            my $path = Module::Path::More::module_path(
+                module => $mod, find_pod => 1, find_pmc => 0,
+            );
+            $infile = $path if $path;
+        }
+        unless (-f $infile) {
+            return [404, "No such file '$infile'"];
+        }
     }
 
     Pod::Html::pod2html(
-        "pod2html",
-        "--infile=$infile",
-        "--outfile=$tempoutfile",
+        ($infile eq '-' ? () : ("--infile=$infile")),
+        "--outfile=$tempoutfile.html",
         "--cachedir=$cachedir",
     );
 
     if ($browser) {
         require Browser::Open;
-        my $err = Browser::Open::open_browser("https://metacpan.org/author/$cpanid");
+        my $err = Browser::Open::open_browser("file:$tempoutfile.html");
         return [500, "Can't open browser"] if $err;
         [200];
     } elsif ($outfile eq '-') {
         local $/;
-        open my $ofh, "<", $tempoutfile;
+        open my $ofh, "<", "$tempoutfile.html";
         my $content = <$ofh>;
         [200, "OK", $content, {'cmdline.skip_format' => 1}];
     } else {
