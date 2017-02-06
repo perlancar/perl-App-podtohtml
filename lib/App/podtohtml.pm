@@ -30,7 +30,7 @@ _
 If not found, will search in for .pod or .pm files in `@INC`.
 
 _
-            schema => 'perl_modname_or_filename*',
+            schema => 'perl::pod_or_pm_filename*',
             default => '-',
             pos => 0,
         },
@@ -76,20 +76,8 @@ sub podtohtml {
 
     my ($fh, $tempoutfile) = File::Temp::tempfile();
 
-    if ($infile eq '-') {
-    } else {
-        if (!(-f $infile)) {
-            # try searching in @INC
-            require Module::Path::More;
-            (my $mod = $infile) =~ s![/.]!::!g;
-            my $path = Module::Path::More::module_path(
-                module => $mod, find_pod => 1, find_pmc => 0,
-            );
-            $infile = $path if $path;
-        }
-        unless (-f $infile) {
-            return [404, "No such file '$infile'"];
-        }
+    unless (-f $infile) {
+        return [404, "No such file '$infile'"];
     }
 
     Pod::Html::pod2html(
