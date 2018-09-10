@@ -61,6 +61,7 @@ _
             'x.doc.show_result' => 0,
         },
     ],
+    'cmdline.skip_format' => 1,
 };
 sub podtohtml {
     require File::Temp;
@@ -95,7 +96,7 @@ sub podtohtml {
         local $/;
         open my $ofh, "<", "$tempoutfile.html";
         my $content = <$ofh>;
-        [200, "OK", $content, {'cmdline.skip_format' => 1}];
+        [200, "OK", $content];
     } else {
         [200, "OK"];
     }
