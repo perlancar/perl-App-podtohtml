@@ -33,15 +33,18 @@ _
             schema => 'perl::pod_or_pm_filename*',
             default => '-',
             pos => 0,
+            cmdline_aliases => {i=>{}},
         },
         outfile => {
             schema => 'filename*',
             pos => 1,
+            cmdline_aliases => {o=>{}},
         },
         browser => {
             summary => 'Instead of outputing HTML to STDOUT/file, '.
                 'view it in browser',
             schema => ['bool*', is=>1],
+            cmdline_aliases => {b=>{}},
         },
     },
     args_rels => {
@@ -55,7 +58,7 @@ _
             'x.doc.show_result' => 0,
         },
         {
-            argv => [qw/some.pod --browser/],
+            argv => [qw/some.pod -b/],
             summary => 'Convert POD file to HTML, show result in browser',
             test => 0,
             'x.doc.show_result' => 0,
