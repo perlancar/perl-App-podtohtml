@@ -62,7 +62,7 @@ $SPEC{podtohtml} = {
 This is a thin wrapper for <pm:Pod::Html> and an alternative CLI to
 <prog:pod2html> to remove some annoyances that I experience with `pod2html`,
 e.g. the default cache directory being `.` (so it leaves `.tmp` files around).
-This CLI also offers tab completion.
+This CLI also offers templates and tab completion.
 
 It does not yet offer as many options as `pod2html`.
 
