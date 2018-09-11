@@ -1,3 +1,12 @@
+0.004   2018-09-11 (PERLANCAR)
+
+	- [ux] Add short option shortcuts for --infile (-i), --outfile
+	  (-o), --browser (-b).
+
+        - [build] Rebuild with updated Perinci::CmdLine::Inline which enabled
+          the generation of argument validation code.
+
+
 0.003   2018-09-10 (PERLANCAR)
 
 	- [ux] Use inline Perinci::CmdLine to minimize dependency, skip
