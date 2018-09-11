@@ -1,0 +1,479 @@
+BODY, .logo { background: white; }
+
+BODY {
+  color: black;
+  font-family: arial,sans-serif;
+  margin: 0;
+  padding: 1ex;
+}
+
+TABLE {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-width: 0;
+  color: inherit;
+}
+
+IMG { border: 0; }
+FORM { margin: 0; }
+input { margin: 2px; }
+
+.logo {
+  float: left;
+  width: 264px;
+  height: 77px;
+}
+
+.front .logo  {
+  float: none;
+  display:block;
+}
+
+.front .mc {
+  display: none;
+}
+
+.mc {
+  float: right;
+  font-size: x-small;
+}
+
+.front .searchbox  {
+  margin: 2ex auto;
+  text-align: center;
+}
+
+.front .menubar {
+  text-align: center;
+  position: absolute;
+  top: 1ex;
+  left: 1ex;
+  right: 1ex;
+}
+
+.front .header {
+  margin-top: 15%;
+}
+
+.front .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 1ex;
+  margin-right: 1ex;
+}
+
+.menubar {
+  background: #006699;
+  margin: 1ex 0;
+  padding: 1px;
+} 
+
+.menubar A {
+  padding: 0.8ex;
+  font: bold 10pt Arial,Helvetica,sans-serif;
+}
+
+.menubar A:link, .menubar A:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.menubar A:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+A:link, A:visited {
+  background: transparent;
+  color: #006699;
+}
+
+A[href="#POD_ERRORS"] {
+  background: transparent;
+  color: #FF0000;
+}
+
+TD {
+  margin: 0;
+  padding: 0;
+}
+
+DIV {
+  border-width: 0;
+}
+
+DT {
+  margin-top: 1em;
+}
+
+.credits TD {
+  padding: 0.5ex 2ex;
+}
+
+.huge {
+  font-size: 32pt;
+}
+
+.s {
+  background: #dddddd;
+  color: inherit;
+}
+
+.s TD, .r TD {
+  padding: 0.2ex 1ex;
+  vertical-align: baseline;
+}
+
+TH {
+  background: #bbbbbb;
+  color: inherit;
+  padding: 0.4ex 1ex;
+  text-align: left;
+}
+
+TH A:link, TH A:visited {
+  background: transparent;
+  color: black;
+}
+
+.box {
+  border: 1px solid #006699;
+  margin: 1ex 0;
+  padding: 0;
+}
+
+.distfiles TD {
+  padding: 0 2ex 0 0;
+  vertical-align: baseline;
+}
+
+.manifest TD {
+  padding: 0 1ex;
+  vertical-align: top;
+}
+
+.l1 {
+  font-weight: bold;
+}
+
+.l2 {
+  font-weight: normal;
+}
+
+.t1, .t2, .t3, .t4, .t5  {
+  background: #006699;
+  color: white;
+}
+.t4 {
+  padding: 0.2ex 0.4ex;
+}
+.t1, .t2, .t3  {
+  padding: 0.5ex 1ex;
+}
+
+/* IE does not support  .box>.t1  Grrr */
+.box .t1, .box .t2, .box .t3, .box .t5 {
+  margin: 0;
+}
+
+.t1 {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.t2 {
+  font-size: 1.0em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.t3 {
+  font-size: 1.0em;
+  font-weight: normal;
+  text-align: left;
+}
+
+.t5 {
+  font-size: 0.8em;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* width: 100%; border: 0.1px solid #FFFFFF; */ /* NN4 hack */
+
+.datecell {
+  text-align: center;
+  width: 17em;
+}
+
+.cell {
+  padding: 0.2ex 1ex;
+  text-align: left;
+}
+
+.label {
+  background: #aaaaaa;
+  color: black;
+  font-weight: bold;
+  padding: 0.2ex 1ex;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.categories {
+  display: none;
+  border-bottom: 3px double #006699;
+  margin-bottom: 1ex;
+  padding-bottom: 3ex;
+  padding-top: 2ex;
+}
+
+.categories TABLE {
+  margin: auto;
+}
+
+.categories TD {
+  padding: 0.5ex 1ex;
+  vertical-align: baseline;
+}
+
+.path A {
+  background: transparent;
+  color: #006699;
+  font-weight: bold;
+}
+
+.pages {
+  background: #dddddd;
+  color: #006699;
+  padding: 0.2ex 0.4ex;
+}
+
+.path {
+  background: #dddddd;
+  border-bottom: 1px solid #006699;
+  color: #006699;
+ /*  font-size: 1.4em;*/
+  margin: 1ex 0;
+  padding: 0.5ex 1ex;
+}
+
+.menubar TD {
+  background: #006699;
+  color: white;
+}
+
+.menubar {
+  background: #006699;
+  color: white;
+  margin: 1ex 0;
+  padding: 1px;
+}
+
+.menubar .links     {
+  background: transparent;
+  color: white;
+  padding: 0.2ex;
+  text-align: left;
+}
+
+.menubar .searchbar {
+  background: black;
+  color: black;
+  margin: 0px;
+  padding: 2px;
+  text-align: right;
+}
+
+A.m:link, A.m:visited {
+  background: #006699;
+  color: white;
+  font: bold 10pt Arial,Helvetica,sans-serif;
+  text-decoration: none;
+}
+
+A.o:link, A.o:visited {
+  background: #006699;
+  color: #ccffcc;
+  font: bold 10pt Arial,Helvetica,sans-serif;
+  text-decoration: none;
+}
+
+A.o:hover {
+  background: transparent;
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+A.m:hover {
+  background: transparent;
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+.pod, .manifest { margin-right: 20ex; }
+
+.pod PRE     {
+  background: #eeeeee;
+  border: 1px solid #888888;
+  color: black;
+  padding: 1em;
+  white-space: pre;
+}
+
+.pod H1      {
+  background: transparent;
+  color: #006699;
+  font-size: large;
+}
+
+.pod H1 A { text-decoration: none; }
+.pod H2 A { text-decoration: none; }
+.pod H3 A { text-decoration: none; }
+.pod H4 A { text-decoration: none; }
+
+.pod H2      {
+  background: transparent;
+  color: #006699;
+  font-size: medium;
+}
+
+.pod H3      {
+  background: transparent;
+  color: #006699;
+  font-size: medium;
+  font-style: italic;
+}
+
+.pod H4      {
+  background: transparent;
+  color: #006699;
+  font-size: medium;
+  font-weight: normal;
+}
+
+.pod IMG     {
+  vertical-align: top;
+}
+
+.pod .toc A  {
+  text-decoration: none;
+}
+
+.pod .toc LI {
+  line-height: 1.2em;
+  list-style-type: none;
+}
+
+.faq DT {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.chmenu {
+  background: black;
+  color: red;
+  font: bold 1.1em Arial,Helvetica,sans-serif;
+  margin: 1ex auto;
+  padding: 0.5ex;
+}
+
+.chmenu TD {
+  padding: 0.2ex 1ex;
+}
+
+.chmenu A:link, .chmenu A:visited  {
+  background: transparent;
+  color: white;
+  text-decoration: none;
+}
+
+.chmenu A:hover {
+  background: transparent;
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+.column {
+  padding: 0.5ex 1ex;
+  vertical-align: top;
+}
+
+.datebar {
+  margin: auto;
+  width: 14em;
+}
+
+.date {
+  background: transparent;
+  color: #008000;
+}
+
+.footer {
+  margin-top: 1ex;
+  color: #006699;
+  border-top: 1px solid #006699;
+}
+
+.sponsor {
+  text-align: right;
+  float: right;
+  font-size: x-small;
+  line-height: 120%;
+}
+
+#permalink {
+  float: right
+}
+
+#permalink A {
+  font-size: small;
+}
+
+.sr {
+  font-size: inherit;
+  margin: 0;
+}
+
+.cpanstats {
+  float: left;
+  text-align: left;
+  color: #bbb;
+  white-space: pre;
+  font-size: x-small;
+  line-height: 120%;
+}
+
+form.tool {
+  margin: 1ex;
+}
+
+.styleswitch {
+  text-align: right;
+}
+
+/*
+     FILE ARCHIVED ON 20:53:27 Jan 22, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 04:18:10 Sep 11, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 163.258 (3)
+  esindex: 0.006
+  captures_list: 186.428
+  CDXLines.iter: 14.178 (3)
+  PetaboxLoader3.datanode: 727.056 (5)
+  exclusion.robots: 0.236
+  exclusion.robots.policy: 0.221
+  RedisCDXSource: 3.124
+  PetaboxLoader3.resolve: 59.008 (2)
+  load_resource: 653.832
+*/
