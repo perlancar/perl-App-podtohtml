@@ -102,6 +102,15 @@ _
             schema => ['str*'],
             cmdline_aliases => {t=>{}},
             tags => ['category:template'],
+            completion => sub {
+                require App::podtohtml; # this weird thing is when we are run in _podtohtml
+                require Complete::Util;
+                my %args = @_;
+                Complete::Util::complete_array_elem(
+                    word => $args{word},
+                    array => App::podtohtml::_list_templates(),
+                );
+            },
         },
     },
     args_rels => {
