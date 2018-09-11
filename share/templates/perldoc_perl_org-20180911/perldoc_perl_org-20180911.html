@@ -1,0 +1,671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+  <title>Compress::Raw::Bzip2 - perldoc.perl.org</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en-gb">
+  <link rel="search" type="application/opensearchdescription+xml" title="Search perldoc.perl.org" href="http://perldoc.perl.org/static/search.xml">
+  <link href="perldoc_perl_org-20180911_files/css-20100830.css" rel="stylesheet" rev="stylesheet" type="text/css" media="screen">
+  <link href="perldoc_perl_org-20180911_files/exploreperl.css" rel="stylesheet" rev="stylesheet" type="text/css">
+</head>
+
+<body onload="perldoc.startup();" onpageshow="if (event.persisted) perldoc.startup();">
+    <div id="page">
+      
+      <div id="header">
+	<div id="homepage_link">
+	  <a href="http://perldoc.perl.org/index.html"></a>
+	</div>
+	<div id="strapline">
+	  Perl Programming Documentation
+	</div>
+	<div id="download_link" class="download">
+	  <a href="http://www.perl.org/get.html">Download Perl</a>
+	</div>
+	<div id="explore_link" class="download">
+	  <a id="explore_anchor" href="#">Explore</a>
+	</div>
+      </div>
+      
+      <div id="body">
+        <div id="left_column">
+          <div class="side_group">
+            
+	      <div class="side_panel doc_panel">
+		<p>Perl version</p>
+		<script language="JavaScript" type="text/javascript" src="perldoc_perl_org-20180911_files/perlversion.js"></script><select id="perl_version_select" name="version-chooser" onchange="selectPerlVersion(this)">  <option selected="selected">Select...  </option><optgroup label="Perl 5 version 26">    <option value="/index.html">Perl 5.26.1    </option><option value="/5.26.0/index.html">Perl 5.26.0  </option></optgroup>  <optgroup label="Perl 5 version 24">    <option value="/5.24.0/index.html">Perl 5.24.0  </option></optgroup>  <optgroup label="Perl 5 version 22">    <option value="/5.22.0/index.html">Perl 5.22.0  </option></optgroup>  <optgroup label="Perl 5 version 20">    <option value="/5.20.2/index.html">Perl 5.20.2    </option><option value="/5.20.1/index.html">Perl 5.20.1    </option><option value="/5.20.0/index.html">Perl 5.20.0  </option></optgroup>  <optgroup label="Perl 5 version 18">    <option value="/5.18.2/index.html">Perl 5.18.2    </option><option value="/5.18.1/index.html">Perl 5.18.1    </option><option value="/5.18.0/index.html">Perl 5.18.0  </option></optgroup>  <optgroup label="Perl 5 version 16">    <option value="/5.16.2/index.html">Perl 5.16.2    </option><option value="/5.16.1/index.html">Perl 5.16.1    </option><option value="/5.16.0/index.html">Perl 5.16.0  </option></optgroup>  <optgroup label="Perl 5 version 14">    <option value="/5.14.2/index.html">Perl 5.14.2    </option><option value="/5.14.1/index.html">Perl 5.14.1    </option><option value="/5.14.0/index.html">Perl 5.14.0  </option></optgroup>  <optgroup label="Perl 5 version 12">    <option value="/5.12.4/index.html">Perl 5.12.4    </option><option value="/5.12.3/index.html">Perl 5.12.3    </option><option value="/5.12.2/index.html">Perl 5.12.2    </option><option value="/5.12.1/index.html">Perl 5.12.1    </option><option value="/5.12.0/index.html">Perl 5.12.0  </option></optgroup>  <optgroup label="Perl 5 version 10">    <option value="/5.10.1/index.html">Perl 5.10.1    </option><option value="/5.10.0/index.html">Perl 5.10.0  </option></optgroup>  <optgroup label="Perl 5 version 8">    <option value="/5.8.9/index.html">Perl 5.8.9    </option><option value="/5.8.8/index.html">Perl 5.8.8  </option></optgroup></select>
+		<ul>
+		  <li><a href="http://perldoc.perl.org/preferences.html">Preferences</a>
+		</li></ul>
+	      </div>
+            
+	    <div class="side_panel doc_panel">
+              <p>Manual</p>
+              <ul>
+                <li><a href="http://perldoc.perl.org/index-overview.html">Overview</a>
+                </li><li><a href="http://perldoc.perl.org/index-tutorials.html">Tutorials</a>
+                </li><li><a href="http://perldoc.perl.org/index-faq.html">FAQs</a>
+                </li><li><a href="http://perldoc.perl.org/index-history.html">History / Changes</a>
+                </li><li><a href="http://perldoc.perl.org/index-licence.html">License</a>
+              </li></ul>
+            </div>
+            <div class="side_panel doc_panel">
+              <p>Reference</p>
+              <ul>
+                <li><a href="http://perldoc.perl.org/index-language.html">Language</a>
+                </li><li><a href="http://perldoc.perl.org/index-functions.html">Functions</a>
+                </li><li><a href="http://perldoc.perl.org/perlop.html">Operators</a>
+                </li><li><a href="http://perldoc.perl.org/perlvar.html">Special Variables</a>
+                </li><li><a href="http://perldoc.perl.org/index-pragmas.html">Pragmas</a>
+                </li><li><a href="http://perldoc.perl.org/index-utilities.html">Utilities</a>
+                </li><li><a href="http://perldoc.perl.org/index-internals.html">Internals</a>
+                </li><li><a href="http://perldoc.perl.org/index-platforms.html">Platform Specific</a>
+              </li></ul>
+            </div>
+            <div class="side_panel doc_panel">
+              <p>Modules</p>
+              <ul>
+		<li>
+		
+                
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		
+                  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		
+                  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		    
+		  
+		
+                  
+		
+                  
+		
+                  
+		    
+		  
+		
+                  
+		
+                  
+		
+		
+                    <a href="http://perldoc.perl.org/index-modules-A.html">A</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-B.html">B</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-C.html">C</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-D.html">D</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-E.html">E</a>
+                    
+                      
+                        </li><li>
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-F.html">F</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-G.html">G</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-H.html">H</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-I.html">I</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-L.html">L</a>
+                    
+                      
+                        </li><li>
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-M.html">M</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-N.html">N</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-O.html">O</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-P.html">P</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-S.html">S</a>
+                    
+                      
+                        </li><li>
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-T.html">T</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-U.html">U</a>
+                    
+                      
+                        •
+                      
+                    
+                
+                    <a href="http://perldoc.perl.org/index-modules-X.html">X</a>
+                    
+                
+              </li></ul>
+            </div>
+            
+          </div>
+        </div>
+        <div id="centre_column">
+          <div id="content_header" style="position: static;">
+            <div id="title_bar">
+              <div id="page_name">
+                <h1>Compress::Raw::Bzip2</h1>
+              </div>
+              <div id="perl_version">
+                Perl 5 version 26.1 documentation
+              </div>
+              <div class="page_links" id="page_links_top">
+                <a href="#" onclick="toolbar.goToTop();return false;">Go to top</a>
+		
+                  • <a href="http://perldoc.perl.org/Compress/Raw/Bzip2.pdf">Download PDF</a>
+		
+              </div>
+	      <div class="page_links" id="page_links_bottom">
+		
+                  <a href="#" id="page_index_toggle">Show page index</a> •
+		
+                <a href="#" id="recent_pages_toggle">Show recent pages</a>		
+	      </div>
+	      <div id="search_form">
+		<form action="../../search.html" method="GET" id="search">
+		  <input name="q" id="search_box" alt="Search" type="text"><label class="overTxtLabel" style="line-height: normal; position: absolute; left: 4px; top: 2px;" for="search_box">Search</label>
+		</form>
+	      </div>
+            </div>
+            <div id="breadcrumbs">
+                
+    <a href="http://perldoc.perl.org/index.html">Home</a> &gt;
+    
+      
+        <a href="http://perldoc.perl.org/index-modules-C.html">Core modules (C)</a> &gt;
+      
+    
+    Compress::Raw::Bzip2
+  
+
+            </div>
+          </div>
+          <div id="content_body" style="margin-top: 0px;">
+	    <!--[if lt IE 7]>
+ <div class="noscript">
+   <p>
+     <strong>It looks like you're using Internet Explorer 6. This is a very old
+     browser which does not offer full support for modern websites.</strong>
+   </p>
+   <p>
+     Unfortunately this means that this website will not work on
+     your computer.
+   </p>
+   <p>
+     Don't miss out though! To view the site (and get a better experience from
+     many other websites), simply upgrade to
+     <a href="http://www.microsoft.com/windows/Internet-explorer/default.aspx">Internet
+Explorer 8</a>
+     or download an alternative browser such as
+     <a href="http://www.mozilla.com/en-US/firefox/firefox.html">Firefox</a>,
+     <a href="http://www.apple.com/safari/download/">Safari</a>, or
+     <a href="http://www.google.co.uk/chrome">Google Chrome</a>.
+   </p>
+   <p>
+     All of these browsers are free. If you're using a PC at work, you may
+     need to contact your IT administrator.
+   </p>
+ </div>
+<![endif]-->
+	    <noscript>
+	      <div class="noscript">
+	      <p>
+                <strong>Please note: Many features of this site require JavaScript. You appear to have JavaScript disabled,
+	        or are running a non-JavaScript capable web browser.</strong>
+	      </p>
+	      <p>
+		To get the best experience, please enable JavaScript or download a modern web browser such as <a href="http://www.microsoft.com/windows/Internet-explorer/default.aspx">Internet Explorer 8</a>, <a href="http://www.mozilla.com/en-US/firefox/firefox.html">Firefox</a>, <a href="http://www.apple.com/safari/download/">Safari</a>, or <a href="http://www.google.co.uk/chrome">Google Chrome</a>.
+              </p>
+	      </div>
+	    </noscript>
+
+	    <div id="recent_pages" class="hud_container" style="display: none; visibility: hidden;">
+	      <div id="recent_pages_header" class="hud_header">
+		<div id="recent_pages_close" class="hud_close"><a href="#" onclick="recentPages.hide();return false;"></a></div>
+		<div id="recent_pages_title" class="hud_title"><span class="hud_span_top">Recently read</span></div>
+		<div id="recent_pages_topright" class="hud_topright"></div>
+	      </div>
+	      <div id="recent_pages_content" class="hud_content"></div>
+	      <div id="recent_pages_footer" class="hud_footer">
+		<div id="recent_pages_bottomleft" class="hud_bottomleft"></div>
+		<div id="recent_pages_bottom" class="hud_bottom"><span class="hud_span_bottom"></span></div>
+		<div id="recent_pages_resize" class="hud_resize"></div>
+	      </div>
+	    </div>
+  
+	    <div id="from_search"></div>
+            <h1>Compress::Raw::Bzip2</h1>
+
+
+  <!--    -->
+<ul><li><a href="#NAME">NAME</a></li><li><a href="#SYNOPSIS">SYNOPSIS</a></li><li><a href="#DESCRIPTION">DESCRIPTION</a></li><li><a href="#Compression">Compression</a><ul><li><a href="#(%24z%2c-%24status)-%3d-new-Compress%3a%3aRaw%3a%3aBzip2-%24appendOutput%2c-%24blockSize100k%2c-%24workfactor%3b">($z, $status) = new Compress::Raw::Bzip2 $appendOutput, $blockSize100k, $workfactor;</a></li><li><a href="#%24status-%3d-%24bz-%3ebzdeflate(%24input%2c-%24output)%3b">$status = $bz-&gt;bzdeflate($input, $output);</a></li><li><a href="#%24status-%3d-%24bz-%3ebzflush(%24output)%3b">$status = $bz-&gt;bzflush($output);</a></li><li><a href="#%24status-%3d-%24bz-%3ebzclose(%24output)%3b">$status = $bz-&gt;bzclose($output);</a></li><li><a href="#Example">Example</a></li></ul></li><li><a href="#Uncompression">Uncompression</a><ul><li><a href="#(%24z%2c-%24status)-%3d-new-Compress%3a%3aRaw%3a%3aBunzip2-%24appendOutput%2c-%24consumeInput%2c-%24small%2c-%24verbosity%2c-%24limitOutput%3b">($z, $status) = new Compress::Raw::Bunzip2 $appendOutput, $consumeInput, $small, $verbosity, $limitOutput;</a></li><li><a href="#%24status-%3d-%24z-%3ebzinflate(%24input%2c-%24output)%3b">$status = $z-&gt;bzinflate($input, $output);</a></li></ul></li><li><a href="#Misc">Misc</a><ul><li><a href="#my-%24version-%3d-Compress%3a%3aRaw%3a%3aBzip2%3a%3abzlibversion()%3b">my $version = Compress::Raw::Bzip2::bzlibversion();</a></li></ul></li><li><a href="#Constants">Constants</a></li><li><a href="#SEE-ALSO">SEE ALSO</a></li><li><a href="#AUTHOR">AUTHOR</a></li><li><a href="#MODIFICATION-HISTORY">MODIFICATION HISTORY</a></li><li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li></ul><a name="NAME"></a><h1>NAME</h1>
+<p>Compress::Raw::Bzip2 - Low-Level Interface to bzip2 compression library</p>
+<a name="SYNOPSIS"></a><h1>SYNOPSIS</h1>
+<pre class="verbatim"><ol><li>    <a class="l_k" href="http://perldoc.perl.org/functions/use.html">use</a> <span class="w">Compress::Raw::Bzip2</span> <span class="sc">;</span></li><li></li><li>    <a class="l_k" href="http://perldoc.perl.org/functions/my.html">my</a> <span class="s">(</span><span class="i">$bz</span><span class="cm">,</span> <span class="i">$status</span><span class="s">)</span> = <span class="w">new</span> <span class="w">Compress::Raw::Bzip2</span> <span class="s">[</span><span class="w">OPTS</span><span class="s">]</span></li><li>        or <a class="l_k" href="http://perldoc.perl.org/functions/die.html">die</a> <span class="q">"Cannot create bzip2 object: $bzerno\n"</span><span class="sc">;</span></li><li>    </li><li>    <span class="i">$status</span> = <span class="i">$bz</span><span class="i">-&gt;bzdeflate</span><span class="s">(</span><span class="i">$input</span><span class="cm">,</span> <span class="i">$output</span><span class="s">)</span><span class="sc">;</span></li><li>    <span class="i">$status</span> = <span class="i">$bz</span><span class="i">-&gt;bzflush</span><span class="s">(</span><span class="i">$output</span><span class="s">)</span><span class="sc">;</span></li><li>    <span class="i">$status</span> = <span class="i">$bz</span><span class="i">-&gt;bzclose</span><span class="s">(</span><span class="i">$output</span><span class="s">)</span><span class="sc">;</span></li><li></li><li>    <a class="l_k" href="http://perldoc.perl.org/functions/my.html">my</a> <span class="s">(</span><span class="i">$bz</span><span class="cm">,</span> <span class="i">$status</span><span class="s">)</span> = <span class="w">new</span> <span class="w">Compress::Raw::Bunzip2</span> <span class="s">[</span><span class="w">OPTS</span><span class="s">]</span></li><li>        or <a class="l_k" href="http://perldoc.perl.org/functions/die.html">die</a> <span class="q">"Cannot create bunzip2 object: $bzerno\n"</span><span class="sc">;</span></li><li>    </li><li>    <span class="i">$status</span> = <span class="i">$bz</span><span class="i">-&gt;bzinflate</span><span class="s">(</span><span class="i">$input</span><span class="cm">,</span> <span class="i">$output</span><span class="s">)</span><span class="sc">;</span></li><li></li><li>    <a class="l_k" href="http://perldoc.perl.org/functions/my.html">my</a> <span class="i">$version</span> = <span class="i">Compress::Raw::Bzip2::bzlibversion</span><span class="s">(</span><span class="s">)</span><span class="sc">;</span></li></ol></pre><a name="DESCRIPTION"></a><h1>DESCRIPTION</h1>
+<p><code class="inline"><span class="w">Compress::Raw::Bzip2</span></code>
+ provides an interface to the in-memory
+compression/uncompression functions from the bzip2 compression library.</p>
+<p>Although the primary purpose for the existence of <code class="inline"><span class="w">Compress::Raw::Bzip2</span></code>
+
+is for use by the  <code class="inline"><span class="w">IO::Compress::Bzip2</span></code>
+ and <code class="inline"><span class="w">IO::Compress::Bunzip2</span></code>
+
+modules, it can be used on its own for simple compression/uncompression
+tasks.</p>
+<a name="Compression"></a><h1>Compression</h1>
+<a name="($z,-$status)-=-new-Compress::Raw::Bzip2-$appendOutput,-$blockSize100k,-$workfactor;"></a><h2>($z, $status) = new Compress::Raw::Bzip2 $appendOutput, $blockSize100k, $workfactor;</h2>
+<p>Creates a new compression object.</p>
+<p>If successful, it will return the initialised compression object, <code class="inline"><span class="i">$z</span></code>
+
+and a <code class="inline"><span class="i">$status</span></code>
+ of <code class="inline"><span class="w">BZ_OK</span></code>
+ in a list context. In scalar context it
+returns the deflation object, <code class="inline"><span class="i">$z</span></code>
+, only.</p>
+<p>If not successful, the returned compression object, <code class="inline"><span class="i">$z</span></code>
+, will be
+<i>undef</i> and <code class="inline"><span class="i">$status</span></code>
+ will hold the a <i>bzip2</i> error code.</p>
+<p>Below is a list of the valid options:</p>
+<ul>
+<li><a name="*$appendOutput*"></a><b><b>$appendOutput</b></b>
+<p>Controls whether the compressed data is appended to the output buffer in
+the <code class="inline"><span class="w">bzdeflate</span></code>
+, <code class="inline"><span class="w">bzflush</span></code>
+ and <code class="inline"><span class="w">bzclose</span></code>
+ methods.</p>
+<p>Defaults to 1.</p>
+</li>
+<li><a name="*$blockSize100k*"></a><b><b>$blockSize100k</b></b>
+<p>To quote the bzip2 documentation</p>
+<pre class="verbatim"><ol><li>    blockSize100k specifies the block size to be used for compression. It</li><li>    should be a value between 1 and 9 inclusive, and the actual block size</li><li>    used is 100000 x this figure. 9 gives the best compression but takes</li><li>    most memory.</li></ol></pre><p>Defaults to 1.</p>
+</li>
+<li><a name="*$workfactor*"></a><b><b>$workfactor</b></b>
+<p>To quote the bzip2 documentation</p>
+<pre class="verbatim"><ol><li>    This parameter controls how the compression phase behaves when</li><li>    presented with worst case, highly repetitive, input data. If</li><li>    compression runs into difficulties caused by repetitive data, the</li><li>    library switches from the standard sorting algorithm to a fallback</li><li>    algorithm. The fallback is slower than the standard algorithm by</li><li>    perhaps a factor of three, but always behaves reasonably, no matter how</li><li>    bad the input.</li><li></li><li>    Lower values of workFactor reduce the amount of effort the standard</li><li>    algorithm will expend before resorting to the fallback. You should set</li><li>    this parameter carefully; too low, and many inputs will be handled by</li><li>    the fallback algorithm and so compress rather slowly, too high, and</li><li>    your average-to-worst case compression times can become very large. The</li><li>    default value of 30 gives reasonable behaviour over a wide range of</li><li>    circumstances.</li><li></li><li>    Allowable values range from 0 to 250 inclusive. 0 is a special case,</li><li>    equivalent to using the default value of 30.</li></ol></pre><p>Defaults to 0.</p>
+</li>
+</ul>
+<a name="$status-=-$bz-&gt;bzdeflate($input,-$output);"></a><h2>$status = $bz-&gt;bzdeflate($input, $output);</h2>
+<p>Reads the contents of <code class="inline"><span class="i">$input</span></code>
+, compresses it and writes the compressed
+data to <code class="inline"><span class="i">$output</span></code>
+.</p>
+<p>Returns <code class="inline"><span class="w">BZ_RUN_OK</span></code>
+ on success and a <code class="inline"><span class="w">bzip2</span></code>
+ error code on failure.</p>
+<p>If <code class="inline"><span class="w">appendOutput</span></code>
+ is enabled in the constructor for the bzip2 object, the
+compressed data will be appended to <code class="inline"><span class="i">$output</span></code>
+. If not enabled, <code class="inline"><span class="i">$output</span></code>
+
+will be truncated before the compressed data is written to it.</p>
+<a name="$status-=-$bz-&gt;bzflush($output);"></a><h2>$status = $bz-&gt;bzflush($output);</h2>
+<p>Flushes any pending compressed data to <code class="inline"><span class="i">$output</span></code>
+.</p>
+<p>Returns <code class="inline"><span class="w">BZ_RUN_OK</span></code>
+ on success and a <code class="inline"><span class="w">bzip2</span></code>
+ error code on failure.</p>
+<a name="$status-=-$bz-&gt;bzclose($output);"></a><h2>$status = $bz-&gt;bzclose($output);</h2>
+<p>Terminates the compressed data stream and flushes any pending compressed
+data to <code class="inline"><span class="i">$output</span></code>
+.</p>
+<p>Returns <code class="inline"><span class="w">BZ_STREAM_END</span></code>
+ on success and a <code class="inline"><span class="w">bzip2</span></code>
+ error code on failure.</p>
+<a name="Example"></a><h2>Example</h2>
+<a name="Uncompression"></a><h1>Uncompression</h1>
+<a name="($z,-$status)-=-new-Compress::Raw::Bunzip2-$appendOutput,-$consumeInput,-$small,-$verbosity,-$limitOutput;"></a><h2>($z, $status) = new Compress::Raw::Bunzip2 $appendOutput, $consumeInput, $small, $verbosity, $limitOutput;</h2>
+<p>If successful, it will return the initialised uncompression object, <code class="inline"><span class="i">$z</span></code>
+
+and a <code class="inline"><span class="i">$status</span></code>
+ of <code class="inline"><span class="w">BZ_OK</span></code>
+ in a list context. In scalar context it
+returns the deflation object, <code class="inline"><span class="i">$z</span></code>
+, only.</p>
+<p>If not successful, the returned uncompression object, <code class="inline"><span class="i">$z</span></code>
+, will be
+<i>undef</i> and <code class="inline"><span class="i">$status</span></code>
+ will hold the a <i>bzip2</i> error code.</p>
+<p>Below is a list of the valid options:</p>
+<ul>
+<li><a name="*$appendOutput*"></a><b><b>$appendOutput</b></b>
+<p>Controls whether the compressed data is appended to the output buffer in the
+<code class="inline"><span class="w">bzinflate</span></code>
+, <code class="inline"><span class="w">bzflush</span></code>
+ and <code class="inline"><span class="w">bzclose</span></code>
+ methods.</p>
+<p>Defaults to 1.</p>
+</li>
+<li><a name="*$consumeInput*"></a><b><b>$consumeInput</b></b>
+</li>
+<li><a name="*$small*"></a><b><b>$small</b></b>
+<p>To quote the bzip2 documentation</p>
+<pre class="verbatim"><ol><li>    If small is nonzero, the library will use an alternative decompression</li><li>    algorithm which uses less memory but at the cost of decompressing more</li><li>    slowly (roughly speaking, half the speed, but the maximum memory</li><li>    requirement drops to around 2300k).</li></ol></pre><p>Defaults to 0.</p>
+</li>
+<li><a name="*$limitOutput*"></a><b><b>$limitOutput</b></b>
+<p>The <code class="inline"><span class="w">LimitOutput</span></code>
+ option changes the behavior of the <code class="inline"><span class="i">$i</span><span class="i">-&gt;bzinflate</span></code>
+
+method so that the amount of memory used by the output buffer can be
+limited.</p>
+<p>When <code class="inline"><span class="w">LimitOutput</span></code>
+ is used the size of the output buffer used will either
+be the 16k or the amount of memory already allocated to <code class="inline"><span class="i">$output</span></code>
+,
+whichever is larger. Predicting the output size available is tricky, so
+don't rely on getting an exact output buffer size.</p>
+<p>When <code class="inline"><span class="w">LimitOutout</span></code>
+ is not specified <code class="inline"><span class="i">$i</span><span class="i">-&gt;bzinflate</span></code>
+ will use as much
+memory as it takes to write all the uncompressed data it creates by
+uncompressing the input buffer.</p>
+<p>If <code class="inline"><span class="w">LimitOutput</span></code>
+ is enabled, the <code class="inline"><span class="w">ConsumeInput</span></code>
+ option will also be
+enabled.</p>
+<p>This option defaults to false.</p>
+</li>
+<li><a name="*$verbosity*"></a><b><b>$verbosity</b></b>
+<p>This parameter is ignored.</p>
+<p>Defaults to 0.</p>
+</li>
+</ul>
+<a name="$status-=-$z-&gt;bzinflate($input,-$output);"></a><h2>$status = $z-&gt;bzinflate($input, $output);</h2>
+<p>Uncompresses <code class="inline"><span class="i">$input</span></code>
+ and writes the uncompressed data to <code class="inline"><span class="i">$output</span></code>
+.</p>
+<p>Returns <code class="inline"><span class="w">BZ_OK</span></code>
+ if the uncompression was successful, but the end of the
+compressed data stream has not been reached. Returns <code class="inline"><span class="w">BZ_STREAM_END</span></code>
+ on
+successful uncompression and the end of the compression stream has been
+reached.</p>
+<p>If <code class="inline"><span class="w">consumeInput</span></code>
+ is enabled in the constructor for the bunzip2 object,
+<code class="inline"><span class="i">$input</span></code>
+ will have all compressed data removed from it after
+uncompression. On <code class="inline"><span class="w">BZ_OK</span></code>
+ return this will mean that <code class="inline"><span class="i">$input</span></code>
+ will be an
+empty string; when <code class="inline"><span class="w">BZ_STREAM_END</span></code>
+ <code class="inline"><span class="i">$input</span></code>
+ will either be an empty
+string or will contain whatever data immediately followed the compressed
+data stream.</p>
+<p>If <code class="inline"><span class="w">appendOutput</span></code>
+ is enabled in the constructor for the bunzip2 object,
+the uncompressed data will be appended to <code class="inline"><span class="i">$output</span></code>
+. If not enabled,
+<code class="inline"><span class="i">$output</span></code>
+ will be truncated before the uncompressed data is written to it.</p>
+<a name="Misc"></a><h1>Misc</h1>
+<a name="my-$version-=-Compress::Raw::Bzip2::bzlibversion();"></a><h2>my $version = Compress::Raw::Bzip2::bzlibversion();</h2>
+<p>Returns the version of the underlying bzip2 library.</p>
+<a name="Constants"></a><h1>Constants</h1>
+<p>The following bzip2 constants are exported by this module</p>
+<pre class="verbatim"><ol><li>		<span class="w">BZ_RUN</span></li><li>		<span class="w">BZ_FLUSH</span></li><li>		<span class="w">BZ_FINISH</span></li><li></li><li>		<span class="w">BZ_OK</span></li><li>		<span class="w">BZ_RUN_OK</span></li><li>		<span class="w">BZ_FLUSH_OK</span></li><li>		<span class="w">BZ_FINISH_OK</span></li><li>		<span class="w">BZ_STREAM_END</span></li><li>		<span class="w">BZ_SEQUENCE_ERROR</span></li><li>		<span class="w">BZ_PARAM_ERROR</span></li><li>		<span class="w">BZ_MEM_ERROR</span></li><li>		<span class="w">BZ_DATA_ERROR</span></li><li>		<span class="w">BZ_DATA_ERROR_MAGIC</span></li><li>		<span class="w">BZ_IO_ERROR</span></li><li>		<span class="w">BZ_UNEXPECTED_EOF</span></li><li>		<span class="w">BZ_OUTBUFF_FULL</span></li><li>		<span class="w">BZ_CONFIG_ERROR</span></li></ol></pre><a name="SEE-ALSO"></a><h1>SEE ALSO</h1>
+<p><a href="http://perldoc.perl.org/Compress/Zlib.html">Compress::Zlib</a>, <a href="http://perldoc.perl.org/IO/Compress/Gzip.html">IO::Compress::Gzip</a>, <a href="http://perldoc.perl.org/IO/Uncompress/Gunzip.html">IO::Uncompress::Gunzip</a>, <a href="http://perldoc.perl.org/IO/Compress/Deflate.html">IO::Compress::Deflate</a>, <a href="http://perldoc.perl.org/IO/Uncompress/Inflate.html">IO::Uncompress::Inflate</a>, <a href="http://perldoc.perl.org/IO/Compress/RawDeflate.html">IO::Compress::RawDeflate</a>, <a href="http://perldoc.perl.org/IO/Uncompress/RawInflate.html">IO::Uncompress::RawInflate</a>, <a href="http://perldoc.perl.org/IO/Compress/Bzip2.html">IO::Compress::Bzip2</a>, <a href="http://perldoc.perl.org/IO/Uncompress/Bunzip2.html">IO::Uncompress::Bunzip2</a>, <a href="http://search.cpan.org/perldoc/IO::Compress::Lzma">IO::Compress::Lzma</a>, <a href="http://search.cpan.org/perldoc/IO::Uncompress::UnLzma">IO::Uncompress::UnLzma</a>, <a href="http://search.cpan.org/perldoc/IO::Compress::Xz">IO::Compress::Xz</a>, <a href="http://search.cpan.org/perldoc/IO::Uncompress::UnXz">IO::Uncompress::UnXz</a>, <a href="http://search.cpan.org/perldoc/IO::Compress::Lzop">IO::Compress::Lzop</a>, <a href="http://search.cpan.org/perldoc/IO::Uncompress::UnLzop">IO::Uncompress::UnLzop</a>, <a href="http://search.cpan.org/perldoc/IO::Compress::Lzf">IO::Compress::Lzf</a>, <a href="http://search.cpan.org/perldoc/IO::Uncompress::UnLzf">IO::Uncompress::UnLzf</a>, <a href="http://perldoc.perl.org/IO/Uncompress/AnyInflate.html">IO::Uncompress::AnyInflate</a>, <a href="http://perldoc.perl.org/IO/Uncompress/AnyUncompress.html">IO::Uncompress::AnyUncompress</a></p>
+<p><a href="http://perldoc.perl.org/IO/Compress/FAQ.html">IO::Compress::FAQ</a></p>
+<p><a href="http://perldoc.perl.org/File/GlobMapper.html">File::GlobMapper</a>, <a href="http://search.cpan.org/perldoc/Archive::Zip">Archive::Zip</a>,
+<a href="http://perldoc.perl.org/Archive/Tar.html">Archive::Tar</a>,
+<a href="http://perldoc.perl.org/IO/Zlib.html">IO::Zlib</a></p>
+<p>The primary site for the bzip2 program is <a href="http://www.bzip.org/">http://www.bzip.org</a>.</p>
+<p>See the module <a href="http://search.cpan.org/perldoc/Compress::Bzip2">Compress::Bzip2</a></p>
+<a name="AUTHOR"></a><h1>AUTHOR</h1>
+<p>This module was written by Paul Marquess, <code class="inline"><span class="w">pmqs</span><span class="i">@cpan</span>.<span class="w">org</span></code>
+.</p>
+<a name="MODIFICATION-HISTORY"></a><h1>MODIFICATION HISTORY</h1>
+<p>See the Changes file.</p>
+<a name="COPYRIGHT-AND-LICENSE"></a><h1>COPYRIGHT AND LICENSE</h1>
+<p>Copyright (c) 2005-2017 Paul Marquess. All rights reserved.</p>
+<p>This program is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.</p>
+
+
+
+
+  <div id="page_index" class="hud_container" style="display: none; visibility: hidden;">
+    <div id="page_index_header" class="hud_header">
+      <div id="page_index_close" class="hud_close"><a href="#" onclick="pageIndex.hide();return false;"></a></div>
+      <div id="page_index_title" class="hud_title"><span class="hud_span_top">Page index</span></div>
+      <div id="page_index_topright" class="hud_topright"></div>
+    </div>
+    <div id="page_index_content" class="hud_content">
+      <ul><li><a href="#NAME">NAME</a></li><li><a href="#SYNOPSIS">SYNOPSIS</a></li><li><a href="#DESCRIPTION">DESCRIPTION</a></li><li><a href="#Compression">Compression</a><ul><li><a href="#(%24z%2c-%24status)-%3d-new-Compress%3a%3aRaw%3a%3aBzip2-%24appendOutput%2c-%24blockSize100k%2c-%24workfactor%3b">($z, $status) = new Compress::Raw::Bzip2 $appendOutput, $blockSize100k, $workfactor;</a></li><li><a href="#%24status-%3d-%24bz-%3ebzdeflate(%24input%2c-%24output)%3b">$status = $bz-&gt;bzdeflate($input, $output);</a></li><li><a href="#%24status-%3d-%24bz-%3ebzflush(%24output)%3b">$status = $bz-&gt;bzflush($output);</a></li><li><a href="#%24status-%3d-%24bz-%3ebzclose(%24output)%3b">$status = $bz-&gt;bzclose($output);</a></li><li><a href="#Example">Example</a></li></ul></li><li><a href="#Uncompression">Uncompression</a><ul><li><a href="#(%24z%2c-%24status)-%3d-new-Compress%3a%3aRaw%3a%3aBunzip2-%24appendOutput%2c-%24consumeInput%2c-%24small%2c-%24verbosity%2c-%24limitOutput%3b">($z, $status) = new Compress::Raw::Bunzip2 $appendOutput, $consumeInput, $small, $verbosity, $limitOutput;</a></li><li><a href="#%24status-%3d-%24z-%3ebzinflate(%24input%2c-%24output)%3b">$status = $z-&gt;bzinflate($input, $output);</a></li></ul></li><li><a href="#Misc">Misc</a><ul><li><a href="#my-%24version-%3d-Compress%3a%3aRaw%3a%3aBzip2%3a%3abzlibversion()%3b">my $version = Compress::Raw::Bzip2::bzlibversion();</a></li></ul></li><li><a href="#Constants">Constants</a></li><li><a href="#SEE-ALSO">SEE ALSO</a></li><li><a href="#AUTHOR">AUTHOR</a></li><li><a href="#MODIFICATION-HISTORY">MODIFICATION HISTORY</a></li><li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li></ul>
+    </div>
+    <div id="page_index_footer" class="hud_footer">
+      <div id="page_index_bottomleft" class="hud_bottomleft"></div>
+      <div id="page_index_bottom" class="hud_bottom"><span class="hud_span_bottom"></span></div>
+      <div id="page_index_resize" class="hud_resize"></div>
+    </div>
+  </div>
+
+
+	    &nbsp;
+          </div>
+          <div id="content_footer">
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      
+    <div id="footer">
+      <div id="footer_content">
+        <div id="footer_strapline">
+          perldoc.perl.org - Official documentation for the Perl programming language
+        </div>
+        <div id="footer_links">
+          <div id="address">
+            <p class="name">Contact details</p>
+            <p class="address">
+	      Site maintained by <a href="mailto:jj@jonallen.info">Jon Allen (JJ)</a><br>
+	    </p>
+            <p class="contact">
+              Documentation maintained by the <a href="http://lists.cpan.org/showlist.cgi?name=perl5-porters">Perl 5 Porters</a>
+            </p>
+          </div>
+          <ul class="f1">
+            <li>Manual
+              <ul class="f2">
+                <li><a href="http://perldoc.perl.org/index-overview.html">Overview</a>
+                </li><li><a href="http://perldoc.perl.org/index-tutorials.html">Tutorials</a>
+                </li><li><a href="http://perldoc.perl.org/index-faq.html">FAQs</a>
+                </li><li><a href="http://perldoc.perl.org/index-history.html">Changes</a>
+              </li></ul>
+            </li><li>Reference
+              <ul class="f2">
+                <li><a href="http://perldoc.perl.org/index-language.html">Language</a>
+                </li><li><a href="http://perldoc.perl.org/index-functions.html">Functions</a>
+                </li><li><a href="http://perldoc.perl.org/perlop.html">Operators</a>
+                </li><li><a href="http://perldoc.perl.org/perlvar.html">Variables</a>
+              </li></ul>
+            </li><li>Modules
+              <ul class="f2">
+                <li><a href="http://perldoc.perl.org/index-modules-A.html">Modules</a>
+                </li><li><a href="http://perldoc.perl.org/index-pragmas.html">Pragmas</a>
+                </li><li><a href="http://perldoc.perl.org/index-utilities.html">Utilities</a>
+              </li></ul>
+            </li><li>Misc
+              <ul class="f2">
+                <li><a href="http://perldoc.perl.org/index-licence.html">License</a>
+                </li><li><a href="http://perldoc.perl.org/index-internals.html">Internals</a>
+                </li><li><a href="http://perldoc.perl.org/index-platforms.html">Platforms</a>
+              </li></ul>          </li></ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div id="footer_end">
+      </div>
+    </div>
+      
+    <div id="explorePerl"><div id="explorePerl_top"><div id="explorePerl_tl"></div><div id="explorePerl_tr"></div></div><div id="explorePerl_mid"><div id="explorePerl_ml"><ul class="explorePerl_l1"><li><span class="explorePerl_heading">News</span><ul class="explorePerl_l2"><li><a href="http://blogs.perl.org/">Perl Blogs</a></li><li><a href="http://ironman.enlightenedperl.org/">Perl Ironman</a></li><li><a href="http://www.perlbuzz.com/">Perl Buzz</a></li><li><a href="http://news.perlfoundation.org/">TPF News</a></li></ul></li><li><span class="explorePerl_heading">Language</span><ul class="explorePerl_l2"><li><a href="http://www.perl.org/">Perl.org</a></li><li><a href="http://learn.perl.org/">Learn Perl</a></li><li><a href="http://perldoc.perl.org/">Documentation</a></li><li><a href="http://search.cpan.org/">CPAN</a></li></ul></li><li><span class="explorePerl_heading">Community</span><ul class="explorePerl_l2"><li><a href="http://www.pm.org/">Perl Mongers</a></li><li><a href="http://jobs.perl.org/">Perl Jobs</a></li><li><a href="http://www.perlfoundation.org/">Perl Foundation</a></li><li><a href="http://www.yapc.org/">Conferences</a></li></ul></li></ul></div><div id="explorePerl_mr"></div></div><div id="explorePerl_bot"><div id="explorePerl_bl"></div><div id="explorePerl_br"></div></div></div></div>
+      <script language="JavaScript" type="text/javascript" src="perldoc_perl_org-20180911_files/exploreperl.js"></script>
+      <script language="JavaScript" src="perldoc_perl_org-20180911_files/combined-20100403.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+  perldoc.setPath(2);
+  perldoc.pageName    = 'Compress::Raw::Bzip2';
+  perldoc.pageAddress = 'Compress/Raw/Bzip2.html';
+  perldoc.contentPage = 1;
+  explorePerl.render();
+  explorePerl.addEvents('explore_anchor');
+</script>
+    
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="perldoc_perl_org-20180911_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTrackerJJ = _gat._getTracker("UA-1892152-2");
+pageTrackerJJ._initData();
+pageTrackerJJ._trackPageview();
+var pageTrackerRobert = _gat._getTracker("UA-50555-3");
+pageTrackerRobert._initData();
+pageTrackerRobert._trackPageview();
+</script>
+    
+  
+
+</body></html>
