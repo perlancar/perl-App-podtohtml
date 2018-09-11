@@ -1,3 +1,14 @@
+0.006   2018-09-11 (PERLANCAR)
+
+	- [ux] Provide completion for --template (-t).
+
+	- [Bugfix] Fix searching templates in dist share dir.
+
+	- Tweak order of template search paths.
+
+	- [doc] Mention templates as feature of podtohtml.
+
+
 0.005   2018-09-11 (PERLANCAR)
 
 	- Add templating functionality to give an idea how the rendered POD will
