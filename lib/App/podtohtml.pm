@@ -18,9 +18,9 @@ sub _list_templates_or_get_template_tarball {
     my $which = shift;
 
     my @dirs = (
+        "$CWD/share/templates",
         "$Bin/../share/templates",
         File::ShareDir::dist_dir('App-podtohtml'),
-        "$CWD/share/templates",
     );
     my %templates;
     for my $dir (@dirs) {
