@@ -76,13 +76,6 @@ sub podtohtml {
     my $outfile = $args{outfile} // '-';
     my $browser = $args{browser};
 
-    # XXX Perinci::CmdLine::Inline does not support coercion yet
-    if ($infile =~ /\A\w+(::\w+)*\z/ && !(-f $infile)) {
-        require Module::Path::More;
-        my $path = Module::Path::More::module_path(module => $infile);
-        $infile = $path if defined $path;
-    }
-
     my $cachedir = File::Temp::tempdir(CLEANUP => 1);
 
     my ($fh, $tempoutfile) = File::Temp::tempfile();
