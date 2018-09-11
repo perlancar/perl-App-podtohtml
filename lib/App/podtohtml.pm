@@ -18,21 +18,21 @@ sub _list_templates_or_get_template_tarball {
     my $which = shift;
 
     my @dirs = (
-        "$CWD/share/templates",
-        "$Bin/../share/templates",
+        "$CWD/share",
+        "$Bin/../share",
         File::ShareDir::dist_dir('App-podtohtml'),
     );
     my %templates;
     for my $dir (@dirs) {
-        next unless -d $dir;
-        local $CWD = $dir;
+        next unless -d "$dir/templates";
+        local $CWD = "$dir/templates";
         for my $e (glob "*.tar") {
             my ($name) = $e =~ /(.+)\.tar$/;
             if ($which eq 'list_templates') {
                 $templates{$name}++;
             } elsif ($which eq 'get_template_tarball') {
                 if ($name eq $_[0]) {
-                    return "$dir/$e";
+                    return "$CWD/$e";
                 }
             }
         }
