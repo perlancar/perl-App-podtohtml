@@ -100,7 +100,6 @@ _
         template => {
             summary => 'Pick a template to use, only relevant with --browser',
             schema => ['str*'],
-            cmdline_aliases => {t=>{}},
             tags => ['category:template'],
             completion => sub {
                 require App::podtohtml; # this weird thing is when we are run in _podtohtml
@@ -112,6 +111,7 @@ _
                 );
             },
             cmdline_aliases => {
+                t=>{},
                 metacpan => { is_flag => 1, summary => 'Shortcut for --template metacpan-20180911 --browser', code => sub { $_[0]{browser} = 1; $_[0]{template} = 'metacpan-20180911' } },
             },
         },
