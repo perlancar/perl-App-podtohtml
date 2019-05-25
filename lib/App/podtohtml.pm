@@ -88,12 +88,12 @@ _
         browser => {
             summary => 'Instead of outputing HTML to STDOUT/file, '.
                 'view it in browser',
-            schema => ['bool*', is=>1],
+            schema => 'true*',
             cmdline_aliases => {b=>{}},
         },
         list_templates => {
             summary => 'List available templates',
-            schema => ['bool*', is=>1],
+            schema => 'true*',
             cmdline_aliases => {l=>{}},
             tags => ['category:action', 'category:template'],
         },
@@ -110,6 +110,9 @@ _
                     word => $args{word},
                     array => App::podtohtml::_list_templates(),
                 );
+            },
+            cmdline_aliases => {
+                metacpan => { is_flag => 1, summary => 'Shortcut for --template metacpan-20180911 --browser', code => sub { $_[0]{browser} = 1; $_[0]{template} = 'metacpan-20180911' } },
             },
         },
     },
