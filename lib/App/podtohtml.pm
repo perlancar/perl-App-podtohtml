@@ -12,6 +12,21 @@ use File::chdir;
 
 our %SPEC;
 
+our %argreq0_infile = (
+    infile => {
+        summary => 'Input file (POD)',
+        description => <<'_',
+
+If not found, will search in for .pod or .pm files in `@INC`.
+
+_
+        schema => 'perl::pod_or_pm_filename*',
+        default => '-',
+        pos => 0,
+        cmdline_aliases => {i=>{}},
+    },
+);
+
 sub _list_templates_or_get_template_tarball {
     require File::ShareDir;
 
@@ -68,18 +83,7 @@ It does not yet offer as many options as `pod2html`.
 
 _
     args => {
-        infile => {
-            summary => 'Input file (POD)',
-            description => <<'_',
-
-If not found, will search in for .pod or .pm files in `@INC`.
-
-_
-            schema => 'perl::pod_or_pm_filename*',
-            default => '-',
-            pos => 0,
-            cmdline_aliases => {i=>{}},
-        },
+        %argreq0_infile,
         outfile => {
             schema => 'filename*',
             pos => 1,
@@ -228,6 +232,27 @@ sub podtohtml {
     } else {
         [200, "OK"];
     }
+}
+
+$SPEC{podtohtml_metacpan} = {
+    v => 1.1,
+    summary => 'Show POD documentation roughly like how MetaCPAN would display it',
+    description => <<'_',
+
+This is a shortcut for:
+
+    % podtohtml --template metacpan-20180911 --browser <infile>
+    % podtohtml --metacpan <infile>
+
+_
+    args => {
+        %argreq0_infile,
+    },
+};
+sub podtohtml_metacpan {
+    my %args = @_;
+
+    podtohtml(%args, template => "metacpan-20180911", browser => 1);
 }
 
 1;
