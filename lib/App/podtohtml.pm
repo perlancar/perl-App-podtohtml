@@ -1,6 +1,8 @@
 package App::podtohtml;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -191,6 +193,7 @@ sub podtohtml {
 
     if ($browser) {
         require Browser::Open;
+        require HTML::Entities;
 
         my $url = "file:$tempdir/outfile.html";
 
@@ -213,9 +216,30 @@ sub podtohtml {
             my ($rpod) = $content =~ m!(<ul.+)</body>!s
                 or die "podtohtml: Cannot extract rendered POD from output file\n";
 
+            my $tmplvars;
+            {
+                (my $dist = $args{-orig_infile}) =~ s!::!-!g;
+
+                $tmplvars = {
+                    module => $args{-orig_infile},
+                    author => "AUTHOR",
+                    dist   => $dist,
+
+                    version => 1.234, # XXX actual version
+                    release_date => "2021-12-31", # XXX today's date
+                    module_path => "lib/Foo/Bar.pm", # XXX "actual" module path
+                    abstract => "Some abstract", # XXX actual abstract
+                };
+            }
+
             my $tmplcontent = File::Slurper::read_text("$tmplname/$tmplname.html");
             $tmplcontent =~ s{<!--TEMPLATE:BEGIN_POD-->.+<!--TEMPLATE:END_POD-->}{$rpod}s
                 or die "podtohtml: Cannot insert rendered POD to template\n";
+            $tmplcontent =~ s{\[\[(\w+)(:raw|)\]\]}{
+                exists($tmplvars->{$1}) ?
+                    ($2 eq ':raw' ? $tmplvars->{$1} : HTML::Entities::encode_entities($tmplvars->{$1})) :
+                    "[[UNKNOWN_VAR:$1]]"
+            }eg;
             File::Slurper::write_text("$tmplname/$tmplname.html", $tmplcontent);
 
             $url = "file:$tempdir/$tmplname/$tmplname.html";
