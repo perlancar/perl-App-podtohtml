@@ -218,11 +218,15 @@ sub podtohtml {
 
             my $tmplvars;
             {
-                (my $dist = $args{-orig_infile}) =~ s!::!-!g;
+                (my $module = $args{-orig_infile}) =~ s!/!::!g;
+                (my $dist = $module) =~ s!::!-!g;
+                my $author = "AUTHOR";
 
                 $tmplvars = {
-                    module => $args{-orig_infile},
-                    author => "AUTHOR",
+                    module => $module,
+                    author => $author, # XXX some "actual" author
+                    author_letter1  => substr($author, 0, 1),
+                    author_letter12 => substr($author, 0, 2),
                     dist   => $dist,
 
                     version => 1.234, # XXX actual version
