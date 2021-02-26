@@ -1,3 +1,12 @@
+0.008   2021-02-26  Released-By: PERLANCAR; Urgency: medium
+
+	- Add CLI: podtohtml-metacpan (previously I added --metacpan
+	  shortcut option, but apparently I never used it).
+
+	- [ux] Substitute some text in metacpan template so the render
+	  result is more realistic.
+
+
 0.007   2019-05-25  Released-By: PERLANCAR
 
 	- Add option --metacpan as a shortcut for: --template
