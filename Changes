@@ -1,3 +1,8 @@
+0.009   2021-02-26  Released-By: PERLANCAR; Urgency: medium
+
+	- [ux] Tweak metacpan template some more.
+
+
 0.008   2021-02-26  Released-By: PERLANCAR; Urgency: medium
 
 	- Add CLI: podtohtml-metacpan (previously I added --metacpan
