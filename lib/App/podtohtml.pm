@@ -218,8 +218,10 @@ sub podtohtml {
 
             my $tmplvars;
             {
-                (my $module = $args{-orig_infile}) =~ s!/!::!g;
-                (my $dist = $module) =~ s!::!-!g;
+                my $module;
+                if (defined $args{-orig_infile}) { ($module = $args{-orig_infile}) =~ s!/!::!g }
+                my $dist;
+                if (defined $module) { ($dist = $module) =~ s!::!-!g }
                 my $author = "AUTHOR";
 
                 $tmplvars = {
@@ -240,9 +242,10 @@ sub podtohtml {
             $tmplcontent =~ s{<!--TEMPLATE:BEGIN_POD-->.+<!--TEMPLATE:END_POD-->}{$rpod}s
                 or die "podtohtml: Cannot insert rendered POD to template\n";
             $tmplcontent =~ s{\[\[(\w+)(:raw|)\]\]}{
-                exists($tmplvars->{$1}) ?
+                my $val = exists($tmplvars->{$1}) ?
                     ($2 eq ':raw' ? $tmplvars->{$1} : HTML::Entities::encode_entities($tmplvars->{$1})) :
-                    "[[UNKNOWN_VAR:$1]]"
+                    "[[UNKNOWN_VAR:$1]]";
+                defined $val ? $val : "";
             }eg;
             File::Slurper::write_text("$tmplname/$tmplname.html", $tmplcontent);
 
