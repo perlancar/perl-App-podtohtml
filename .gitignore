@@ -2,3 +2,4 @@ App-podtohtml-*
 .build
 *~
 nytprof*
+.DS_Store
